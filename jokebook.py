@@ -13,10 +13,6 @@ def get_jokes() -> list:
         return json.load(f)
 
 
-def num_jokes() -> int:
-    return len(get_jokes())
-
-
 def get_joke(joke_id: Optional[int] = None) -> dict:
     if joke_id is not None:
         return next(x for x in get_jokes() if x['id'] == joke_id)
@@ -40,12 +36,3 @@ def get_joke(joke_id: Optional[int] = None) -> dict:
         json.dump(all_jokes, file)
 
     return random_joke
-
-
-# def mark_all_unread() -> list:
-#     all_jokes = get_jokes()
-#     for joke in all_jokes:
-#         joke['is_told'] = False
-#     with open(JOKES_PATH, 'w+') as file:
-#         json.dump(all_jokes, file)
-#     return all_jokes

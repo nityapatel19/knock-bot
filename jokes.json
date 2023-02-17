@@ -8,7 +8,7 @@
       "Nobel who?",
       "Nobel... that's why I knocked!"
     ],
-    "is_told": false
+    "is_told": true
   },
   {
     "id": 2,
@@ -19,6 +19,6 @@
       "Who who?",
       "You sound like an owl!"
     ],
-    "is_told": false
+    "is_told": true
   }
 ]

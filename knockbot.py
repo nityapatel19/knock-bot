@@ -14,7 +14,6 @@ with open('config.json') as f:
 
 LOG_CHANNEL = config['log_channel']
 
-
 bot = Bot(command_prefix='$', self_bot=False, case_insensitive=True)
 
 
@@ -34,16 +33,15 @@ async def hello(ctx: Context):
 @bot.command()
 async def knockknock(ctx: Context):
     joke = get_joke()
-    msg = ctx.author.mention + '\n'
-    msg += '\n'.join(joke['content']) + '\n :joy: :joy:'
+    msg = '\n'.join(joke['content']) + '\n :joy: :joy:'
     await ctx.reply(content=msg)
-    # await ctx.reply(content=f"{ctx.author.mention}\n{'\n'.join(joke['content'])}\n:joy: :joy:")
 
 
 @bot.command()
 async def knock(ctx: Context):
     ...
 
+
 if __name__ == '__main__':
     # bot.run(os.getenv('DISCORD_TOKEN'))
-    mark_all_unread()
+    ...
